@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" th:href="@{css/principal/principal.css}">
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <!----===== JS ===== -->
+    <title>Navegación Desplegable</title>
+
+</head>
+<body>
+<nav th:fragment="nav" class="sidebar close">
+    <header>
+        <div class="image-text">
+                <span class="image">
+                    <img th:src="@{imagenes/e-masculino.png}" alt="">
+                </span>
+
+            <div class="text logo-text">
+                <span class="name">Nombre</span>
+                <span class="profession">Admin</span>
+            </div>
+        </div>
+
+        <i class='bx bx-chevron-right toggle'></i>
+    </header>
+
+    <div class="menu-bar">
+        <div class="menu">
+
+            <li class="search-box">
+                <i class='bx bx-search icon'></i>
+                <input type="text" placeholder="Search...">
+            </li>
+
+            <ul class="menu-links">
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-home-alt icon' ></i>
+                        <span class="text nav-text">Inicio
+                            </span>
+                    </a>
+                </li>
+
+                <li class="nav-link" id="inventario-link">
+                    <a href="#">
+                        <i class='bx bx-bar-chart-alt-2 icon'></i>
+                        <span class="text nav-text">Inventario</span>
+                    </a>
+                </li>
+                <ul class="sub-links" id="inventario-sublinks">
+                    <li><a href="#" class="sub-link"><i class='bx bx-category icon'></i><span class="text">Categoría</span></a></li>
+                    <li><a href="#" class="sub-link"><i class='bx bx-box icon'></i><span class="text">Producto</span></a></li>
+                    <li><a href="#" class="sub-link"><i class='bx bx-user icon'></i><span class="text">Proveedor</span></a></li>
+                </ul>
+
+
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-bell icon'></i>
+                        <span class="text nav-text">Ventas</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-pie-chart-alt icon' ></i>
+                        <span class="text nav-text">Reporte</span>
+                    </a>
+                </li>
+
+        </div>
+
+        <div class="bottom-content">
+            <li class="">
+                <a href="#">
+                    <i class='bx bx-log-out icon' ></i>
+                    <span class="text nav-text">Cerrar Sesiòn</span>
+                </a>
+            </li>
+
+            <li class="mode">
+                <div class="sun-moon">
+                    <i class='bx bx-moon icon moon'></i>
+                    <i class='bx bx-sun icon sun'></i>
+                </div>
+                <span class="mode-text text">Dark mode</span>
+
+                <div class="toggle-switch">
+                    <span class="switch"></span>
+                </div>
+            </li>
+
+            <li class="empresa">
+                <div class="image-text-empresa">
+                        <span class="image-empresa">
+                            <img th:src="@{imagenes/tecnostore.png}" alt="">
+                        </span>
+
+                    <div class="text logo-text-empresa">
+                        <span class="name-empresa"><strong>TecnoStore</strong></span>
+                        <span class="name-empresa1"><strong>Perù</strong></span>
+                    </div>
+                </div>
+            </li>
+        </div>
+    </div>
+
+</nav>
+    <script th:src="@{js/js/principal.js}"></script>
+</body>
+</html>
