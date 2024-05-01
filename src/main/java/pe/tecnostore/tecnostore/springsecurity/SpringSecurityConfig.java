@@ -17,11 +17,14 @@ public class SpringSecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.csrf(csrf -> csrf.disable())
-                .authorizeHttpRequests((auth) ->{
+        http
+                .csrf(csrf -> csrf.disable())
+                .authorizeHttpRequests((auth) -> auth
 
-                    auth.anyRequest().permitAll(); })
-                .formLogin(form -> form.loginPage("/login") //ruta del formulario
+                    .requestMatchers("/principal","/login").authenticated()
+                    .anyRequest().permitAll() )
+
+                .formLogin(form -> form.loginPage("/login")
                         .permitAll().defaultSuccessUrl("/principal"))
 
                 .logout(log -> log

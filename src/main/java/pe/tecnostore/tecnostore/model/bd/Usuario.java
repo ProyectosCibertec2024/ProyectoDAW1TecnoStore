@@ -2,6 +2,8 @@ package pe.tecnostore.tecnostore.model.bd;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -17,10 +19,13 @@ public class Usuario {
     @Id
     private Integer idusuario;
     private String nombre;
-    private String correo;
+    @NotEmpty(message = "Ingrese El Email")
+    @Column(name = "correo")
+    private String username;
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @NotEmpty(message = "Ingrese El Password")
     @Column(name = "contraseña")
-    private String pass;
+    private String password;
     @Column(name = "rep_contra")
     private String rep_pass;
     private String urlfoto;

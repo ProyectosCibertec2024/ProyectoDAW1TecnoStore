@@ -25,8 +25,8 @@ public class UsuarioController {
     @GetMapping("/principal")
     public String menu(Authentication auth, Model model) {
         if (auth != null) {
-            String vLogin = auth.getName();
-            Usuario u = usuarioRepository.iniciarSesion(vLogin);
+            String username = auth.getName();
+            Usuario u = usuarioRepository.iniciarSesion(username);
             List<EnlaceMenu> lista = usuarioRepository.traerEnlaceUsuario(u.getRol().getIdrol());
             model.addAttribute("ENLACES", lista);
             model.addAttribute("USUARIO", u);
@@ -39,4 +39,5 @@ public class UsuarioController {
     public String logueo() {
         return "backoffice/logueo/login";
     }
+
 }
