@@ -28,6 +28,7 @@ public class SpringSecurityConfig {
                         .permitAll().defaultSuccessUrl("/principal"))
 
                 .logout(log -> log
+                        .logoutUrl("/logout")
                         .logoutSuccessUrl("/login").permitAll());
 
         return http.build();

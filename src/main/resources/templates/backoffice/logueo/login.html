@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
 <section class="vh-150" style="background-image: url(img/fondo_login.jpeg); background-repeat: no-repeat;background-attachment:fixed; background-size:cover;">
     <div class="container py-5 h-110">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -16,10 +17,13 @@
                     <div  id="card" class="card-body p-5 text-center bg-transparent">
 
                         <form th:action="@{/login}" method="post" >
+                            <div th:if="${param.logout}">
+                                <div class="alert alert-success">Sesion Cerrada</div>
+                            </div>
                             <h3 id="titulologin" class="mb-5">Bienvenido al sistema</h3>
                             <img style="width:30%" th:src="@{img/ic_spring_user.png}" class="rounded mx-auto d-block" alt="...">
                             <div class="form-outline m">
-                                <label  class="form-label" for="typeEmailX-2" style="float: left; ">Email</label>
+                                <label class="form-label" for="typeEmailX-2" style="float: left; ">Email</label>
                                 <input type="text" id="typeEmailX-2" name="username" class="form-control form-control-lg" required/>
                             </div>
 
@@ -30,8 +34,9 @@
 
                             <button class="btn btn-primary btn-lg btn-block" type="submit" style="width: 100%;">Login</button>
                             <div th:if="${param.error}" class="mt-2">
-                                <div class="alert alert-danger">Usuario No Encontrado</div>
+                                <div class="alert alert-danger" style="with: 60px; height: 30px">Usuario No Encontrado</div>
                             </div>
+
                         </form>
 
                     </div>
@@ -40,5 +45,6 @@
         </div>
     </div>
 </section>
+
 </body>
 </html>

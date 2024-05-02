@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head th:fragment="head">
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!----======== CSS ======== -->
     <link rel="stylesheet" th:href="@{css/principal/principal.css}">
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    <!----===== JS ===== -->
-    <title>Navegación Desplegable</title>
-
+    <title>Layout</title>
 </head>
 <body>
 <nav th:fragment="nav" class="sidebar close">
     <header>
         <div class="image-text">
-                <span class="image">
-                    <img th:src="@{imagenes/e-masculino.png}" alt="">
+                <span class="image" th:each="b:${session.USUARIO}">
+                    <img th:src="${b.urlfoto}" alt="">
                 </span>
 
-            <div class="text logo-text">
-                <span class="name">Nombre</span>
-                <span class="profession">Admin</span>
+            <div class="text logo-text" th:each="b:${session.USUARIO}">
+                <span class="name" th:text="${b.nombre}"></span>
+                <span class="profession" th:text="${b.rol.descripcion}"></span>
             </div>
         </div>
 
@@ -42,43 +39,23 @@
                 <li class="nav-link">
                     <a href="#">
                         <i class='bx bx-home-alt icon' ></i>
-                        <span class="text nav-text">Inicio
-                            </span>
+                        <span class="text nav-text">Inicio</span>
                     </a>
                 </li>
 
-                <li class="nav-link" id="inventario-link">
-                    <a href="#">
-                        <i class='bx bx-bar-chart-alt-2 icon'></i>
-                        <span class="text nav-text">Inventario</span>
-                    </a>
-                </li>
-                <ul class="sub-links" id="inventario-sublinks">
-                    <li><a href="#" class="sub-link"><i class='bx bx-category icon'></i><span class="text">Categoría</span></a></li>
-                    <li><a href="#" class="sub-link"><i class='bx bx-box icon'></i><span class="text">Producto</span></a></li>
-                    <li><a href="#" class="sub-link"><i class='bx bx-user icon'></i><span class="text">Proveedor</span></a></li>
-                </ul>
-
-
-                <li class="nav-link">
-                    <a href="#">
-                        <i class='bx bx-bell icon'></i>
-                        <span class="text nav-text">Ventas</span>
+                <li class="nav-link" th:each="b:${session.ENLACES}">
+                    <a th:href="${b.ruta}">
+                        <i th:class='${b.icon}'></i>
+                        <span class="text nav-text" th:text="${b.descripcion}"></span>
                     </a>
                 </li>
 
-                <li class="nav-link">
-                    <a href="#">
-                        <i class='bx bx-pie-chart-alt icon' ></i>
-                        <span class="text nav-text">Reporte</span>
-                    </a>
-                </li>
-
+            </ul>
         </div>
 
         <div class="bottom-content">
             <li class="">
-                <a href="#">
+                <a th:href="@{/logout}">
                     <i class='bx bx-log-out icon' ></i>
                     <span class="text nav-text">Cerrar Sesiòn</span>
                 </a>
@@ -104,14 +81,14 @@
 
                     <div class="text logo-text-empresa">
                         <span class="name-empresa"><strong>TecnoStore</strong></span>
-                        <span class="name-empresa1"><strong>Perù</strong></span>
+                        <span class="name-empresa1"><strong>Perú</strong></span>
                     </div>
                 </div>
             </li>
         </div>
     </div>
-
 </nav>
+
     <script th:src="@{js/js/principal.js}"></script>
 </body>
 </html>
