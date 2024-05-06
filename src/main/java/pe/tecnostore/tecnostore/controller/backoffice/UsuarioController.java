@@ -1,4 +1,4 @@
-package pe.tecnostore.tecnostore.controller;
+package pe.tecnostore.tecnostore.controller.backoffice;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

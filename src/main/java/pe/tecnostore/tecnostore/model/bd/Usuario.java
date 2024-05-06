@@ -8,6 +8,7 @@ import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "tb_usuario")
@@ -39,4 +40,7 @@ public class Usuario {
     @JoinColumn(name = "idrol", insertable = false, updatable = false)
     @ManyToOne
     private Rol rol;
+
+    @OneToMany(mappedBy = "usuario", targetEntity = Venta.class)
+    private List<Venta> ventaList;
 }
