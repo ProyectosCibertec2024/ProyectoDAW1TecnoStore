@@ -9,11 +9,13 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import pe.tecnostore.tecnostore.model.bd.EnlaceMenu;
 import pe.tecnostore.tecnostore.model.bd.Usuario;
 import pe.tecnostore.tecnostore.repository.UsuarioRepository;
 import pe.tecnostore.tecnostore.service.UsuarioService;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @AllArgsConstructor
@@ -31,6 +33,21 @@ public class UsuarioServiceImpl implements UsuarioService, UserDetailsService {
     }
 
     @Override
+    public int obtenerId() {
+        return usuarioRepository.obtenerId();
+    }
+
+    @Override
+    public Usuario iniciarSesion(String username) {
+        return usuarioRepository.iniciarSesion(username);
+    }
+
+    @Override
+    public List<EnlaceMenu> traerEnlaceUsuario(int codRol) {
+        return usuarioRepository.traerEnlaceUsuario(codRol);
+    }
+
+    @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         try {
             Usuario bean = usuarioRepository.iniciarSesion(username);
@@ -44,20 +61,4 @@ public class UsuarioServiceImpl implements UsuarioService, UserDetailsService {
             throw new UsernameNotFoundException("Error al cargar el usuario", e);
         }
     }
-
-    /*public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        UserDetails u = null;
-        try {
-            Usuario bean = usuarioRepository.iniciarSesion(username);
-            if (bean == null) {
-                throw new UsernameNotFoundException("Usuario no encontrado");
-            }
-            Set<GrantedAuthority> rol = new HashSet<GrantedAuthority>();
-            rol.add(new SimpleGrantedAuthority(bean.getRol().getDescripcion()));
-            u = new User(username, bean.getPassword(), rol);
-        } catch (Exception e) {
-            System.out.println("Error en : " + e.getMessage());
-        }
-        return u;
-    }*/
 }

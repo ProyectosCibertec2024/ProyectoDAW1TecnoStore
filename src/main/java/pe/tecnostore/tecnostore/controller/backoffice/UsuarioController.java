@@ -23,15 +23,14 @@ import java.util.List;
 @Controller
 public class UsuarioController {
 
-    private UsuarioRepository usuarioRepository;
     private UsuarioService usuarioService;
 
     @GetMapping("/principal")
     public String menu(Authentication auth, Model model) {
         if (auth != null) {
             String username = auth.getName();
-            Usuario u = usuarioRepository.iniciarSesion(username);
-            List<EnlaceMenu> lista = usuarioRepository.traerEnlaceUsuario(u.getRol().getIdrol());
+            Usuario u = usuarioService.iniciarSesion(username);
+            List<EnlaceMenu> lista = usuarioService.traerEnlaceUsuario(u.getRol().getIdrol());
             model.addAttribute("ENLACES", lista);
             model.addAttribute("USUARIO", u);
             return "backoffice/principal/principal";
