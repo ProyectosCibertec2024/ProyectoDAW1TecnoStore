@@ -9,6 +9,8 @@
     justify-content: center; /* Centra los elementos secundarios horizontalmente */
     margin-top: 40px; /* Margen superior de 40px */
     flex-wrap: wrap; /* Permite que los elementos se ajusten automáticamente a la pantalla */
+    margin-left: 40px;
+    margin-right: 60px;
 }
 
 .section-container section {
@@ -157,4 +159,34 @@
     font-size: 48px; /* Tamaño de fuente de 48px */
     color: #555; /* Color del ícono */
     margin-bottom: 20px; /* Añade espacio inferior de 20px */
+}
+/* Estilos para letras e íconos en modo oscuro cuando el interruptor está activado */
+.dark .cuadro i,
+.dark .section-container section i,
+.dark .titulo,
+.dark .titulo-2,
+.dark .titulo-3,
+.dark .empresa .name-empresa,
+.dark .bottom-content .mode-text,
+.dark .section-container h1,
+.dark .cuadro-indicativo p,
+.dark .cuadro-indicativo h2
+{
+    color: #fff; /* Cambia el color de las letras y los íconos a blanco */
+}
+
+nav.sidebar {
+    width: 250px; /* Cambia el ancho del menú */
+}
+
+main {
+    margin-left: 120px;
+}
+.sidebar.close {
+    width: 80px; /* Define el ancho más pequeño del menú al cerrarse */
+}
+
+main.menu-close {
+    margin-left: 90px; /* Ajusta el margen izquierdo más pequeño del contenido principal */
+    margin-right: 90px;
 }

@@ -13,7 +13,7 @@ toggle.addEventListener('click', () => {
         // Si el menú está cerrado, ajusta el margen izquierdo del contenido principal
         // a su valor inicial (80px) con una transición
         main.style.transition = 'margin-left 0.3s ease';
-        main.style.marginLeft = '80px';
+        main.style.marginLeft = '120px';
     } else {
         // Si el menú está abierto, ajusta el margen izquierdo del contenido principal
         // para que el menú no se superponga y ocupe todo el ancho de la pantalla

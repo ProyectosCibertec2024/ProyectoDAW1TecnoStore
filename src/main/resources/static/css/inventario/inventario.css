@@ -10,7 +10,6 @@
     flex-wrap: wrap; /* Permite que los elementos se ajusten automáticamente a la pantalla */
     margin-right: 30px;
 }
-
 .section-container section {
     flex: 1; /* Hace que cada sección ocupe el mismo espacio dentro del contenedor */
     margin: 10px; /* Añade un margen de 10px alrededor de cada sección */
@@ -106,7 +105,6 @@
 .contenedor1-principal-inventario {
     text-align: center; /* Alinea el texto dentro de este contenedor al centro */
 }
-
 .contenedor {
     text-align: center; /* Alinea el texto dentro del contenedor al centro */
     border: 2px solid #ccc; /* Establece un borde de 2px sólido con color #ccc */
@@ -157,7 +155,6 @@
         width: calc(100% - 40px); /* Cambia a una columna en dispositivos móviles */
     }
 }
-
 /* Estilos para el título de cada cuadro */
 .cuadro h2 {
     color: #333; /* Color del título */
@@ -191,16 +188,14 @@
 {
     color: #fff; /* Cambia el color de las letras y los íconos a blanco */
 }
+
 nav.sidebar {
     width: 250px; /* Cambia el ancho del menú */
-    transition: width 0.3s ease; /* Agrega una transición suave */
 }
 
 main {
-    transition: margin-left 0.3s ease; /* Agrega una transición suave */
-    margin-left: 80px;
+    margin-left: 120px;
 }
-
 .sidebar.close {
     width: 80px; /* Define el ancho más pequeño del menú al cerrarse */
 }
