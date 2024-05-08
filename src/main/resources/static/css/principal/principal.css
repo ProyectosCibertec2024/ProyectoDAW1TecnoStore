@@ -44,7 +44,7 @@ body.dark{
 }
 
 /* ===== Sidebar ===== */
- .sidebar{
+.sidebar{
     position: fixed;
     top: 0;
     left: 0;
@@ -170,9 +170,7 @@ body.dark .sidebar header .toggle{
     border-radius: 6px;
     background-color: var(--primary-color-light);
     cursor: pointer;
-    transition: var(--tran-05);
 }
-
 .sidebar li.search-box input{
     height: 100%;
     width: 100%;
@@ -183,7 +181,6 @@ body.dark .sidebar header .toggle{
     border-radius: 6px;
     font-size: 17px;
     font-weight: 500;
-    transition: var(--tran-05);
 }
 .sidebar li a{
     list-style: none;
@@ -222,9 +219,8 @@ body.dark .sidebar li a:hover .text{
 }
 .sidebar .menu-bar .mode{
     border-radius: 6px;
-    background-color: var(--primary-color-light);
     position: relative;
-    transition: var(--tran-05);
+    transition: none;
 }
 
 .menu-bar .mode .sun-moon{

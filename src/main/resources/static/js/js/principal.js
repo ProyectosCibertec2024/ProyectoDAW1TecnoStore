@@ -1,36 +1,29 @@
-const body = document.querySelector('body'),
-sidebar = body.querySelector('nav'),
-toggle = body.querySelector(".toggle"),
-searchBtn = body.querySelector(".search-box"),
-modeSwitch = body.querySelector(".toggle-switch"),
-modeText = body.querySelector(".mode-text");
+const body = document.querySelector('body');
+const sidebar = document.querySelector('nav.sidebar');
+const toggle = document.querySelector('.toggle');
+const main = document.querySelector('main');
+const modeSwitch = document.querySelector('.toggle-switch');
+const modeText = document.querySelector('.mode-text');
 
+toggle.addEventListener('click', () => {
+    sidebar.classList.toggle('close');
+    main.classList.toggle('menu-close');
 
-toggle.addEventListener("click" , () =>{
-sidebar.classList.toggle("close");
-})
-
-searchBtn.addEventListener("click" , () =>{
-sidebar.classList.remove("close");
-})
-
-modeSwitch.addEventListener("click" , () =>{
-body.classList.toggle("dark");
-
-if(body.classList.contains("dark")){
-  modeText.innerText = "Light mode";
-}else{
-  modeText.innerText = "Dark mode";
-
-}
+    if (sidebar.classList.contains('close')) {
+        // Si el menú está cerrado, ajusta el margen izquierdo del contenido principal
+        // a su valor inicial (80px) con una transición
+        main.style.transition = 'margin-left 0.3s ease';
+        main.style.marginLeft = '80px';
+    } else {
+        // Si el menú está abierto, ajusta el margen izquierdo del contenido principal
+        // para que el menú no se superponga y ocupe todo el ancho de la pantalla
+        // con una transición
+        main.style.transition = 'margin-left 0.3s ease';
+        main.style.marginLeft = '300px';
+    }
 });
 
-const inventarioLink = document.getElementById('inventario-link');
-const inventarioSublinks = document.getElementById('inventario-sublinks');
-
-inventarioLink.addEventListener('click', function(event) {
-    event.preventDefault(); // Evitar que el enlace cambie la página
-
-    // Toggle para mostrar/ocultar los subenlaces
-    inventarioSublinks.style.display = (inventarioSublinks.style.display === 'block') ? 'none' : 'block';
+modeSwitch.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    modeText.innerText = body.classList.contains('dark') ? 'Light mode' : 'Dark mode';
 });

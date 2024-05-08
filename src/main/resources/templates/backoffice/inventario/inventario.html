@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario</title>
+    <link rel="stylesheet" th:href="@{css/principal/principal.css}">
+    <link rel="stylesheet" th:href="@{css/inventario/inventario.css}">
+    <script src="https://kit.fontawesome.com/1842a186b5.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+<nav th:replace="fragment/layout :: nav"></nav>
+<main>
+    <div class="contenedor1-principal-inventario">
+        <h1 class="titulo">BIENVENIDO AL INVENTARIO</h1>
+        <div class="contenedor">
+            <i class="bx bx-bar-chart-alt-2 icon"></i>
+        </div>
+
+    </div>
+    <div>
+        <h1 class="titulo-3">Panel de Administración de Inventario</h1>
+    </div>
+    <section class="section-container">
+        <section>
+            <a href="pagina_producto.html">
+                <div class="section-1">
+                    <h1 class="texto-blanco">Gestión de Usuarios</h1>
+                    <i class="fas fa-users"></i>
+                </div>
+            </a>
+        </section>
+        <section>
+            <a href="gestionInventario.html">
+                <div class="section-2">
+                    <h1>Gestión de Inventario</h1>
+                    <i class="fas fa-cubes"></i>
+                </div>
+            </a>
+        </section>
+    </section>
+    <div>
+        <h1 class="titulo-2">Mapa de Funcionalidades </h1>
+    </div>
+    <section class="cuadro-indicativo">
+        <section id="usuario" class="cuadro">
+            <h2>Gestión de Usuarios</h2>
+            <i class="fas fa-users"></i>
+            <p>Esta sección permite gestionar los usuarios del sistema.</p>
+            <p><strong>Función:</strong> Permite administrar los usuarios registrados en el sistema, incluyendo su información personal, roles, permisos, etc. También puede permitir la creación, edición y eliminación de usuarios.</p>
+        </section>
+        <section id="inventario" class="cuadro">
+            <h2>Gestión de Inventario</h2>
+            <i class="fas fa-cubes"></i>
+            <p>Esta sección facilita la gestión del inventario de productos.</p>
+            <p><strong>Función:</strong> Permite administrar el inventario de productos, incluyendo la visualización de detalles como nombre, descripción, cantidad disponible, etc. Además, permite realizar acciones como agregar, editar o eliminar productos del inventario.</p>
+        </section>
+    </section>
+
+</main>
+<script th:src="@{js/js/principal.js}"></script>
+</body>
+</html>
+        
