@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import pe.tecnostore.tecnostore.model.bd.EnlaceMenu;
 import pe.tecnostore.tecnostore.model.bd.Usuario;
 import pe.tecnostore.tecnostore.repository.UsuarioRepository;
-import pe.tecnostore.tecnostore.service.UsuarioService;
+import pe.tecnostore.tecnostore.service.interfaces.IUsuarioService;
 
 import java.util.HashSet;
 import java.util.List;
@@ -20,7 +20,7 @@ import java.util.Set;
 
 @AllArgsConstructor
 @Service
-public class UsuarioServiceImpl implements UsuarioService, UserDetailsService {
+public class UsuarioService implements IUsuarioService, UserDetailsService {
 
     private UsuarioRepository usuarioRepository;
 

@@ -1,14 +1,11 @@
 package pe.tecnostore.tecnostore;
 
-import lombok.AllArgsConstructor;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import pe.tecnostore.tecnostore.model.bd.Usuario;
-import pe.tecnostore.tecnostore.service.UsuarioService;
+import pe.tecnostore.tecnostore.service.interfaces.IUsuarioService;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
@@ -16,7 +13,7 @@ import java.util.Date;
 class TecnostoreApplicationTests {
 
 	@Autowired
-	private UsuarioService usuarioService;
+	private IUsuarioService usuarioService;
 
 	@Test
 	void contextLoads() {

@@ -10,12 +10,15 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 @AllArgsConstructor
 @Controller
 public class InventarioController {
+
     @GetMapping("/inventario")
     public String inventario(Model model){
         return "backoffice/inventario/inventario";
     }
+
     @GetMapping("/gestionInventario")
     public String gestionInventario(Model model){
-        return "backoffice/inventario/gestionInventario/gestionInventario";
+        return "backoffice/inventario/GestionInventario/gestionInventario";
     }
+
 }

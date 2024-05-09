@@ -12,8 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import pe.tecnostore.tecnostore.model.bd.EnlaceMenu;
 import pe.tecnostore.tecnostore.model.bd.Usuario;
-import pe.tecnostore.tecnostore.repository.UsuarioRepository;
-import pe.tecnostore.tecnostore.service.UsuarioService;
+import pe.tecnostore.tecnostore.service.interfaces.IUsuarioService;
 
 import java.util.List;
 
@@ -23,7 +22,7 @@ import java.util.List;
 @Controller
 public class UsuarioController {
 
-    private UsuarioService usuarioService;
+    private IUsuarioService usuarioService;
 
     @GetMapping("/principal")
     public String menu(Authentication auth, Model model) {

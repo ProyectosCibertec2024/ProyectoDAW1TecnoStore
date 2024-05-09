@@ -21,8 +21,14 @@ public class SpringSecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests((auth) -> auth
 
-                    .requestMatchers("/principal","/login").authenticated()
-                    .anyRequest().permitAll() )
+                    .requestMatchers("/login"
+                                ,"/logout"
+                                ,"/resources/**"
+                                ,"/static/**"
+                                ,"/css/**"
+                                ,"/js/**"
+                                ,"/img/**").permitAll()
+                    .anyRequest().authenticated() )
 
                 .formLogin(form -> form.loginPage("/login")
                         .permitAll().defaultSuccessUrl("/principal"))
