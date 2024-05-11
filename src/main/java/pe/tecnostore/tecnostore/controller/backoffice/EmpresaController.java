@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import pe.tecnostore.tecnostore.service.interfaces.IEmpresaService;
 
@@ -12,15 +11,14 @@ import pe.tecnostore.tecnostore.service.interfaces.IEmpresaService;
 
 @AllArgsConstructor
 @Controller
-@RequestMapping("/inventario")
 public class EmpresaController {
+
     private IEmpresaService empresaService;
 
     @GetMapping("/empresa")
-    public String empresa(Model model) {
+    public String empresas(Model model) {
         model.addAttribute("empresa", empresaService.empresaList());
         return "backoffice/empresa/frmempresa";
     }
-
 
 }

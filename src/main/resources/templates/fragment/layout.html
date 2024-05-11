@@ -8,6 +8,7 @@
     <link rel="stylesheet" th:href="@{css/principal/principal.css}">
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+   <!-- <link rel="stylesheet" th:href="@{css/bootstrap/bootstrap.css}">-->
     <title>Layout</title>
 </head>
 <body>
@@ -37,7 +38,7 @@
 
             <ul class="menu-links">
                 <li class="nav-link">
-                    <a href="#">
+                    <a th:href="@{/dashboard}">
                         <i class='bx bx-home-alt icon' ></i>
                         <span class="text nav-text">Inicio</span>
                     </a>
@@ -57,7 +58,7 @@
             <li class="">
                 <a th:href="@{/logout}">
                     <i class='bx bx-log-out icon' ></i>
-                    <span class="text nav-text">Cerrar Sesiòn</span>
+                    <span class="text nav-text">Cerrar Sesión</span>
                 </a>
             </li>
 

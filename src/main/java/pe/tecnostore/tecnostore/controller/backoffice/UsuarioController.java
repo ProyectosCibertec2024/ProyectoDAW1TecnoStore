@@ -24,7 +24,8 @@ public class UsuarioController {
 
     private IUsuarioService usuarioService;
 
-    @GetMapping("/principal")
+    /**Principal**/
+    @GetMapping("/dashboard")
     public String menu(Authentication auth, Model model) {
         if (auth != null) {
             String username = auth.getName();
@@ -37,11 +38,13 @@ public class UsuarioController {
         return "backoffice/principal/principal";
     }
 
+    /**Logueo**/
     @GetMapping("/login")
     public String logueo() {
         return "backoffice/logueo/login";
     }
 
+    /**Cerrar Sesion y borrar las coookies de auth**/
     @GetMapping("/logout")
     public String logout(HttpServletRequest request, HttpServletResponse response) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -50,4 +53,7 @@ public class UsuarioController {
         }
         return "redirect:/login?logout";
     }
+
+    /*GESTION DE USUARIO*/
+
 }
