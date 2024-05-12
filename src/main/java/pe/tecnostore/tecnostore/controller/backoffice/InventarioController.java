@@ -4,9 +4,11 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 @SessionAttributes({"ENLACES","USUARIO"})
+
 @AllArgsConstructor
 @Controller
 public class InventarioController {
@@ -16,7 +18,7 @@ public class InventarioController {
         return "backoffice/inventario/inventario";
     }
 
-    @GetMapping("/gestionInventario")
+    @GetMapping("/gestioninventario")
     public String gestionInventario(Model model){
         return "backoffice/inventario/GestionInventario/gestionInventario";
     }

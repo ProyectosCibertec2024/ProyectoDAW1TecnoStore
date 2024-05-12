@@ -17,7 +17,6 @@ public class Empresa {
     private Integer idtipoempresa;
     private String email;
     private String ruc;
-    private Integer idtipobanco;
 
     @OneToMany(mappedBy = "empresa", targetEntity = Proveedor.class)
     private List<Proveedor> lstProveedor;

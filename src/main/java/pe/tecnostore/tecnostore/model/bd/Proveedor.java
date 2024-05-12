@@ -15,7 +15,6 @@ public class Proveedor {
     private String nomproveedor;
     private String telefono;
     private String correo;
-    private Integer idtipoproveedor;
     private Boolean estado;
     private LocalDate fecharegistro;
     private Integer idempresa;
