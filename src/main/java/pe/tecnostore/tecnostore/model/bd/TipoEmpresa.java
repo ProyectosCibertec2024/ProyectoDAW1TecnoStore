@@ -1,5 +1,6 @@
 package pe.tecnostore.tecnostore.model.bd;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
@@ -16,6 +17,7 @@ public class TipoEmpresa {
     private Integer idtipoempresa;
     private String nomempresa;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "tipoEmpresa")
     private List<Empresa> empresaList;
 }

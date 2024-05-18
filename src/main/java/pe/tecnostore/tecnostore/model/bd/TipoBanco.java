@@ -1,5 +1,6 @@
 package pe.tecnostore.tecnostore.model.bd;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
@@ -16,6 +17,7 @@ public class TipoBanco {
     private Integer idtipobanco;
     private String nombanco;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "tipoBancoList")
     private List<Empresa> empresaList;
 }

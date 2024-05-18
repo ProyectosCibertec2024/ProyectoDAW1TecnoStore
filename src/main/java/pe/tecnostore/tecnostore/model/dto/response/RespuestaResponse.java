@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Builder
 @Data
-public class Respuesta {
-    private Boolean respuesta;
+public class RespuestaResponse {
+    private boolean resultado;
     private String mensaje;
 }

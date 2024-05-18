@@ -1,7 +1,9 @@
 package pe.tecnostore.tecnostore.model.bd;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -16,9 +18,11 @@ public class Proveedor {
     private String telefono;
     private String correo;
     private Boolean estado;
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
     private LocalDate fecharegistro;
     private Integer idempresa;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "proveedor", targetEntity = Producto.class)
     private List<Producto> productoList;
 
@@ -27,6 +31,7 @@ public class Proveedor {
     foreignKey = @ForeignKey(name = "FkIdEmpresaToEmpresa"))
     private Empresa empresa;
 
+    @JsonIgnore
     @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     @JoinTable(name = "tipoprov_proveedor", joinColumns = @JoinColumn(name = "idproveedor"),
             inverseJoinColumns = @JoinColumn(name = "idtipoproveedor"),

@@ -182,9 +182,9 @@ nav.sidebar {
 main {
     margin-left: 120px;
 }
-.sidebar.close {
-    width: 80px; /* Define el ancho más pequeño del menú al cerrarse */
-}
+/*.sidebar.close {
+    width: 80px;
+}*/
 
 main.menu-close {
     margin-left: 90px; /* Ajusta el margen izquierdo más pequeño del contenido principal */

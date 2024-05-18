@@ -18,7 +18,6 @@
     max-width: 550px; /* Establece un ancho máximo para las secciones */
     border: 2.5px solid #C8CCD9;
     border-radius: 20px;
-
 }
 
 /* Estilos para la sección cuando se pasa el mouse */
@@ -190,16 +189,16 @@
 }
 
 nav.sidebar {
-    width: 250px; /* Cambia el ancho del menú */
+    width: 250px;
 }
 
 main {
     margin-left: 120px;
 }
-.sidebar.close {
-    width: 80px; /* Define el ancho más pequeño del menú al cerrarse */
-}
+/*.sidebar.close {
+    width: 80px;
+}*/
 
 main.menu-close {
-    margin-left: 80px; /* Ajusta el margen izquierdo más pequeño del contenido principal */
+    margin-left: 80px;
 }

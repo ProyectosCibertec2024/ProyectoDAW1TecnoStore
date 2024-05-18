@@ -54,6 +54,9 @@ public class UsuarioService implements IUsuarioService, UserDetailsService {
             if (bean == null) {
                 throw new UsernameNotFoundException("Usuario no encontrado");
             }
+            if(bean.getActivo() == false) {
+                throw new UsernameNotFoundException("El Usuario Esta Deshabilitado");
+            }
             Set<GrantedAuthority> authorities = new HashSet<>();
             authorities.add(new SimpleGrantedAuthority(bean.getRol().getDescripcion()));
             return new User(username, bean.getPassword(), authorities);

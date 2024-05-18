@@ -25,11 +25,6 @@ public class EmpresaService implements IEmpresaService {
     }
 
     @Override
-    public void eliminarEmpresa(int id) {
-        empresaRepository.deleteById(id);
-    }
-
-    @Override
     public Empresa buscarEmpresa(int id) {
         return empresaRepository.findById(id).orElse(null);
     }
